@@ -10,6 +10,7 @@ import styles from './HomeContent.module.scss'
 import ButtonLink from "../UI/ButtonLink";
 import Link from 'next/link';
 import {Box, List, ListItem, ListItemIcon, ListItemText, Stack, SvgIcon, Typography} from "@mui/material";
+import {useAppSelector} from "../../store/redux";
 
 interface Scope {
     primary: string,
@@ -27,6 +28,8 @@ const scopeElements:Array<Scope> = [
 
 
 const HomeContent = () => {
+    const {isAuth} = useAppSelector(state => state.user);
+
     return (
         <Stack
             component='section'
@@ -59,7 +62,7 @@ const HomeContent = () => {
                     ToDoTasks дает уверенность в том, что все организовано и принято во внимание, чтобы вы могли
                     преуспеть в важных для себя делах.
                 </Typography>
-                <Link href='/dashboard' passHref>
+                <Link href={isAuth ? '/dashboard': '/users/signin'} passHref>
                 <ButtonLink
                     variant='contained'
                     size='medium'

@@ -36,8 +36,8 @@ const ReferencePage = () => {
                                     variant='subtitle1'
                                     color='secondary'>
                             После входа в систему <strong style={{color: '#FE4F5A'}}>ToDoTasks</strong>:
-                            <Typography variant='subtitle1' color='secondary'>1. Есть возможность заполнить <Link href='/users/profile'>Профиль</Link>;</Typography>
-                            <Typography variant='subtitle1' color='secondary'>2. Можно начать работу перейдя на страницу <Link href='/dashboard'>Рабочая область</Link>;</Typography>
+                            <Typography variant='subtitle1' color='secondary'>1. Есть возможность заполнить <strong style={{color: '#FE4F5A'}}>[Профиль]</strong>;</Typography>
+                            <Typography variant='subtitle1' color='secondary'>2. Можно начать работу перейдя на страницу <strong style={{color: '#FE4F5A'}}>[Рабочая область]</strong>;</Typography>
                             <Typography variant='subtitle1' fontWeight={600} color='secondary'>Пора начать полностью контролировать ситуацию и создайте свой список дел!</Typography>
                         </Typography>
                         </Box>
