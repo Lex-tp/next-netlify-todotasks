@@ -40,7 +40,7 @@ const AuthBox = (props: AuthBoxProps) => {
     const signInGitHub = () => {
         setEnterGithub(true);
         windowAuth = window.open(
-            'http://localhost:3001/auth/github',
+            'https://todotask-server.herokuapp.com/auth/github',
             'Auth',
             'width=500,height=500,status=yes,toolbar=no,menubar=no,location=no',
         );
