@@ -1,7 +1,7 @@
 import axios from "axios";
 import AuthResponse from "../store/types/AuthResponse";
 
-export const API_URL = 'https://todotask-server.herokuapp.com/';
+export const API_URL = 'https://todotask-server.herokuapp.com';
 
 const $api = axios.create({
     withCredentials: true,
