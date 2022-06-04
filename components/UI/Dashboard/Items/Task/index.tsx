@@ -136,15 +136,21 @@ const Task = (props: TaskProps) => {
         dispatch(updateTask({id: taskContent.id, title, description, term}))
             .unwrap()
             .then(() => {
-                tags.forEach((tag) => {
-                    dispatch(fetchAddTagForTask({taskId: taskContent.id, tagId: tag.id}))
-                        .unwrap()
-                        .then(() => {
-                            props.onChangeTask();
-                            setEditMode(false);
-                            setOnlyTerm(false);
-                        });
-                });
+                if(tags.length>0) {
+                    tags.forEach((tag) => {
+                        dispatch(fetchAddTagForTask({taskId: taskContent.id, tagId: tag.id}))
+                            .unwrap()
+                            .then(() => {
+                                props.onChangeTask();
+                                setEditMode(false);
+                                setOnlyTerm(false);
+                            });
+                    });
+                }else {
+                    props.onChangeTask();
+                    setEditMode(false);
+                    setOnlyTerm(false);
+                }
             });
     }
 
