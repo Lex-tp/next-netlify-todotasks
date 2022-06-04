@@ -79,7 +79,7 @@ const ProfileContent = () => {
         if (file.name) {
             const data = new FormData();
             data.append('image', file);
-            return await axios.post('http://localhost:3001/image/upload', data, {
+            return await axios.post('https://todotask-server.herokuapp.com/image/upload', data, {
                 headers: {
                     'content-type': 'multipart/form-data'
                 }

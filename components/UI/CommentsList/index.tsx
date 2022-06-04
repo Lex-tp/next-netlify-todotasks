@@ -69,7 +69,7 @@ const CommentsList = (props: CommentsListProps) => {
         if(file.name) {
             const data = new FormData();
             data.append('file', file);
-            return await axios.post('http://localhost:3001/file/upload', data, {
+            return await axios.post('https://todotask-server.herokuapp.com/file/upload', data, {
                 headers: {
                     'content-type': 'multipart/form-data'
                 }
