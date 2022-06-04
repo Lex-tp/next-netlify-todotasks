@@ -1,0 +1,19 @@
+.footer_wrapper {
+  width: 100% !important;
+  justify-items: stretch !important;
+  position: fixed !important;
+  left: 0 !important;
+  bottom: 0 !important;
+}
+
+.main_board {
+  width: 100% !important;
+}
+
+
+@media (max-width: 800px) {
+  .main_board {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}

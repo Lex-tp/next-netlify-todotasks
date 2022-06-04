@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  font-family: 'Nunito','Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+html,body {
+  height: 100vh;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.while_text {
+  color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e7e7e7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FE4F5A;
+  border-radius: 10px;
+  border: 2px solid #e7e7e7;
+}
+
+.fc-event-main-frame {
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+}
+
+.fc-daygrid-event-harness:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+
+  .MuiChip-label {
+    font-size: 9px;
+  }
+
+  .MuiChip-root {
+    height: max-content;
+    margin: 0;
+  }
+
+  .MuiChip-root.MuiChip-filled {
+    margin: 0;
+  }
+
+  .MuiChip-label .MuiTypography-root  {
+    font-size: 9px;
+  }
+
+  .MuiButtonBase-root.MuiIconButton-root {
+    padding: 0;
+  }
+
+  .MuiButtonBase-root.MuiIconButton-root:last-child {
+    padding-right: 2px;
+  }
+
+  .MuiCheckbox-root {
+    padding-left: 2px;
+  }
+
+  .fc.fc-media-screen .fc-toolbar-title {
+    font-size: 16px;
+  }
+}

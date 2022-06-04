@@ -1,0 +1,12 @@
+.tag {
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+
+  &_title {
+    vertical-align: text-bottom !important;
+  }
+
+  &:hover {
+    cursor: pointer !important;
+  }
+}

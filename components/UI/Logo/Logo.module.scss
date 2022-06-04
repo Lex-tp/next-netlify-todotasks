@@ -1,0 +1,10 @@
+.logo {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+
+  &_text {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

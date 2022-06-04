@@ -1,0 +1,25 @@
+@mixin hoverIcon($color) {
+  transition: .2s !important;
+  color: #f5f5f5 !important;
+
+  &:hover {
+    cursor: pointer !important;
+    color: $color !important;
+  }
+}
+
+.facebookIcon {
+  @include hoverIcon(#4867AA);
+}
+
+.githubIcon {
+  @include hoverIcon(#1A2E33);
+}
+
+.linkedinIcon {
+  @include hoverIcon(#2088FF);
+}
+
+.googleMailIcon {
+  @include hoverIcon(#F24749);
+}
