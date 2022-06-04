@@ -134,6 +134,7 @@ const Task = (props: TaskProps) => {
 
     const handlerSuccessEdit = (title: string, description: string, term: string, tags: Array<ITag>) => {
         dispatch(updateTask({id: taskContent.id, title, description, term}))
+            .unwrap()
             .then(() => {
                 tags.forEach((tag) => {
                     dispatch(fetchAddTagForTask({taskId: taskContent.id, tagId: tag.id}))
