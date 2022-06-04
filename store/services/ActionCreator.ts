@@ -202,7 +202,7 @@ export const updateTag = createAsyncThunk(
     'user/updateTag',
     async (data: {id:number, title:string, color: string}, thunkApi) => {
         try {
-            const response = (await $api.put(`${API_URL}/dashboard/tags/update`,data));
+            const response = (await $api.post(`${API_URL}/dashboard/tags/update`,data));
             return response.data.body;
         } catch (error:any) {
             return thunkApi.rejectWithValue(error.response.data.body.message);
@@ -214,7 +214,7 @@ export const updateTask = createAsyncThunk(
     'user/updateTask',
     async (data: {id:number, title:string, description: string, term: string}, thunkApi) => {
         try {
-            const response = (await $api.put(`${API_URL}/dashboard/tasks/update`,data));
+            const response = (await $api.post(`${API_URL}/dashboard/tasks/update`,data));
             return response.data.body;
         } catch (error:any) {
             return thunkApi.rejectWithValue(error.response.data.body.message);
@@ -226,7 +226,7 @@ export const updatePriorityTask = createAsyncThunk(
     'user/updatePriorityTask',
     async (data: {id:number, priority:boolean}, thunkApi) => {
         try {
-            const response = (await $api.put(`${API_URL}/dashboard/tasks/priority`,data));
+            const response = (await $api.post(`${API_URL}/dashboard/tasks/priority`,data));
             return response.data.body;
         } catch (error:any) {
             return thunkApi.rejectWithValue(error.response.data.body.message);
@@ -238,7 +238,7 @@ export const doneTask = createAsyncThunk(
     'user/doneTask',
     async (data: {id:number, done:boolean}, thunkApi) => {
         try {
-            const response = (await $api.put(`${API_URL}/dashboard/tasks/done`,data));
+            const response = (await $api.post(`${API_URL}/dashboard/tasks/done`,data));
             return response.data.body;
         } catch (error:any) {
             return thunkApi.rejectWithValue(error.response.data.body.message);
