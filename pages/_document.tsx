@@ -9,7 +9,7 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico" />
+                    <link rel="shortcut icon" href="https://todotasks-diploma.netlify.app/favicon.ico" />
                 </Head>
                 <body>
                 <Main />
