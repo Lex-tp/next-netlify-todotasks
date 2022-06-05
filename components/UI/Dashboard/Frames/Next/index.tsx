@@ -197,7 +197,7 @@ const NextFrame = () => {
                             title: task.title,
                             start: task.term,
                             end: endOfDay(new Date(task.term)),
-                            color: new Date(taskContent.term) < new Date() && !taskContent.done ? '#d32f2f' : taskContent.done ? '#398f3c': '#FE4F5A',
+                            color: new Date(task.term) < new Date() && !task.done ? '#d32f2f' : task.done ? '#398f3c': '#FE4F5A',
                             display: 'block',
                         }
                     })
