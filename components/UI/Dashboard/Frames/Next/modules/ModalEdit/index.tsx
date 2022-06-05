@@ -11,41 +11,54 @@ import {AppDispatch} from "../../../../../../../store";
 interface ModalEditProps {
     open: boolean,
     tabName: string,
+
     onClose(): void,
+
     onChange(): void,
+
     task: ITask,
     addMethod: boolean,
     onlyTerm?: boolean,
 }
 
-const ModalEdit = (props:ModalEditProps) => {
+const ModalEdit = (props: ModalEditProps) => {
     const dispatch = useDispatch<AppDispatch>();
 
     const handlerSuccessEdit = (title: string, description: string, term: string, tags: Array<ITag>) => {
-        if(!props.addMethod) {
+        if (!props.addMethod) {
             dispatch(updateTask({id: props.task.id, title, description, term}))
                 .then(() => {
-                    tags.forEach((tag) => {
-                        dispatch(fetchAddTagForTask({taskId: props.task.id, tagId: tag.id}))
-                            .unwrap()
-                            .then(() => {
-                                props.onClose();
-                                props.onChange();
-                            });
-                    });
+                    if (tags.length > 0) {
+                        tags.forEach((tag) => {
+                            dispatch(fetchAddTagForTask({taskId: props.task.id, tagId: tag.id}))
+                                .unwrap()
+                                .then(() => {
+                                    props.onClose();
+                                    props.onChange();
+                                });
+                        })
+                    } else {
+                        props.onChange();
+                        props.onClose();
+                    }
                 });
-        }else {
+        } else {
             dispatch(fetchAddTask({title, description, term}))
                 .unwrap()
                 .then((data: ITask) => {
-                    tags.forEach((tag) => {
-                        dispatch(fetchAddTagForTask({taskId: data.id, tagId: tag.id}))
-                            .unwrap()
-                            .then(() => {
-                                props.onClose();
-                                props.onChange();
-                            });
-                    });
+                    if (tags.length > 0) {
+                        tags.forEach((tag) => {
+                            dispatch(fetchAddTagForTask({taskId: data.id, tagId: tag.id}))
+                                .unwrap()
+                                .then(() => {
+                                    props.onClose();
+                                    props.onChange();
+                                });
+                        })
+                    } else {
+                        props.onChange();
+                        props.onClose();
+                    }
                 })
         }
     }
