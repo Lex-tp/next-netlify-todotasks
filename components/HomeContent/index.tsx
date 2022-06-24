@@ -140,7 +140,7 @@ const HomeContent = () => {
                     maxWidth={1000}>
                     Начните полностью контролировать ситуацию и создайте свой список дел.
                 </Typography>
-                <Link href='/dashboard' passHref>
+                <Link href={isAuth ? '/dashboard': '/users/signin'} passHref>
                 <ButtonLink
                     variant='contained'
                     size='medium'
